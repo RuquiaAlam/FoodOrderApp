@@ -14,6 +14,7 @@ import { useState, useEffect } from "react";
 import UserContext from "./utils/UserContext";
 import appStore from "./utils/appStore";
 // import Grocery from "./components/Grocery";
+import {Provider} from "react-redux";
 
 //Chunking
 //Code Splitting
@@ -40,7 +41,7 @@ const AppLayout = () => {
   }, []);
 
   return (
-    <Provider store={appStore}>
+      <Provider store={appStore}>
    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
       <div className="app">
         <Header />
@@ -50,7 +51,7 @@ const AppLayout = () => {
         <Footer />
       </div>
     </UserContext.Provider>
-    </Provider>
+     </Provider>
  
   );
 };
